@@ -85,7 +85,9 @@
         balls: [
           {id: 1, show: false},
           {id: 2, show: false},
-          {id: 3, show: false}
+          {id: 3, show: false},
+          {id: 4, show: false},
+          {id: 5, show: false}
         ],
         dropBalls: [],
         fold: true
@@ -178,7 +180,7 @@
           el.style.transform = 'translate3d(0, 0, 0)'
           let inner = el.getElementsByClassName('inner-hook')[0]
           inner.style.transform = 'translate3d(0, 0, 0)'
-          el.addEventListener('transitionend', done)
+          el.addEventListener('transitionend', done())
         })
       },
       afterEnter: function (el) {
@@ -204,7 +206,6 @@
       },
       pay (e) {
         e.stopPropagation()
-        console.log(e)
         if (this.totalPrice < this.minPrice) {
           return
         }
